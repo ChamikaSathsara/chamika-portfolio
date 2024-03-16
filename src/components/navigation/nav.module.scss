@@ -1,0 +1,19 @@
+.navBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main_color);
+    width: 100vw;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navBar__logo{
+    font-weight: 500;
+    margin-left: 10rem;
+
+}
+.toggle{
+    margin-right: 10rem;
+}
