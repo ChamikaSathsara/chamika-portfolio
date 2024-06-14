@@ -1,0 +1,113 @@
+// myProjects.module.scss
+
+.myProjects {
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.myProjectsTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+    color: var(--body_color);
+}
+
+.card {
+    flex: 1 1 calc(33.33% - 20px); // Adjusting width to ensure 3 cards per row
+    max-width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    position: relative;
+    height: 200px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cardTitle {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background: var(--second_color);
+    color: var(--body_background_color);
+    font-size: x-large;
+    text-align: center;
+    display: flex;
+    justify-content: center; // Centers horizontally
+    align-items: center;     // Centers vertically
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover .cardTitle {
+    opacity: 1;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modalContent {
+    background: var( --body_background_color);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    border: 1px solid var(--second_color);
+    color: var(--body_color);
+
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.link{
+    text-decoration: none;
+    color: var(--body_color);
+}
+
+@media only screen and (max-width: 412px) {
+    .aboutText{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: 0rem;
+        margin-top: 0rem;
+    }
+  }
