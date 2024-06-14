@@ -101,8 +101,40 @@
     text-decoration: none;
     color: var(--body_color);
 }
+@media only screen and (max-width: 600px) {
+    .card{
+        display: flex;
+        flex-direction: column;
+        flex: none; // Adjusting width to ensure 3 cards per row
+        max-width: none;
+    }
+}
 
 @media only screen and (max-width: 412px) {
+    .modal {
+        padding-left: 5%;
+        padding-right: 5%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+    }
+    
+    .modalContent {
+        background: var( --body_background_color);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 500px;
+        width: 100%;
+        position: relative;
+        border: 1px solid var(--second_color);
+        color: var(--body_color);
+        font-size: small ;
+    
+    }
+    
     .aboutText{
         display: flex !important;
         align-items: center !important;

@@ -7,6 +7,7 @@
     border-radius: 10px;
     position: relative;
     justify-content: center;
+    flex-direction: column; /* Stack items vertically on smaller screens */
 }
 
 .profilepic {
@@ -70,28 +71,56 @@
     margin-bottom: 10px;
 }
 
-p {
+.aboutContent {
     font-size: 1em;
     line-height: 1.5;
 }
 
-.aboutText{
+.aboutText {
     margin-left: 5rem;
     margin-top: 5rem;
     width: 50%;
 }
-.aboutTitle{
+
+.aboutTitle {
     display: flex;
     align-items: center;
     margin-top: 6rem;
     color: var(--body_color);
 }
-@media only screen and (max-width: 412px) {
-    .aboutText{
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        margin-left: 0rem;
-        margin-top: 0rem;
+
+/* Mobile view adjustments */
+@media only screen and (max-width: 768px) {
+    .wrap {
+        flex-direction: column;
+        align-items: center;
     }
-  }
+
+    .aboutText {
+
+        flex-direction: column;
+        margin-left: 0;
+        margin-top: 3rem;
+        width: 80%;
+        text-align: center;
+    }
+
+    .aboutTitle {
+        margin-top: 2rem;
+    }
+
+    .aboutContent{
+        font-size: small;
+        text-align: justify;
+    }
+}
+
+@media only screen and (max-width: 412px) {
+    .aboutText {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 0;
+    }
+}
