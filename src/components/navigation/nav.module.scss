@@ -3,10 +3,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--main_color);
+    border-bottom: 1px solid var(--body_color);
     width: 100vw;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    backdrop-filter: blur(8px);
 }
 
 .navBar__logo{

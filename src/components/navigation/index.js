@@ -3,19 +3,25 @@ import ReactSwitch from 'react-switch';
 import styles from './nav.module.scss';
 
 const Nav = () => {
-    // Retrieve the initial theme from localStorage or default to 'light'
-    const initialTheme = localStorage.getItem('selectedTheme') || 'light';
+    // Function to determine if it's AM or PM
+    const isNightTime = () => {
+        const hours = new Date().getHours();
+        return hours >= 18 || hours < 6; // Consider night time from 6 PM to 6 AM
+    };
+
+    // Retrieve the initial theme based on time or localStorage
+    const initialTheme = localStorage.getItem('selectedTheme') || (isNightTime() ? 'dark' : 'light');
     const [checked, setChecked] = useState(initialTheme === 'dark');
 
     const setDarkMode = () => {
         document.querySelector("body").setAttribute('data-theme', 'dark');
         localStorage.setItem('selectedTheme', 'dark');
-    }
+    };
 
     const setLightMode = () => {
         document.querySelector("body").setAttribute('data-theme', 'light');
         localStorage.setItem('selectedTheme', 'light');
-    }
+    };
 
     // useEffect to set the theme on initial render
     useEffect(() => {
@@ -28,7 +34,7 @@ const Nav = () => {
 
     const handleChange = (checked) => {
         setChecked(checked);
-    }
+    };
 
     return (
         <div className={styles.navBar}>
@@ -76,6 +82,6 @@ const Nav = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Nav;

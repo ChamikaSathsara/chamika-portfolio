@@ -1,14 +1,16 @@
 :root{
   --body_background_color : white ;
+  --body_background_color_down_opazity: rgba(255, 255, 255, 0.726);
   --body_color: black;
-  --main_color: rgb(70, 170, 252);
-  --second_color:rgb(18, 3, 174);
+  --main_color: rgb(252, 128, 70);
+  --second_color:rgb(145, 77, 0);
 }
 [data-theme='dark']{
   --body_background_color : black ;
+  --body_background_color_down_opazity: rgba(0, 0, 0, 0.829);
   --body_color: white;
-  --main_color: rgb(32, 63, 90);
-  --second_color:rgb(70, 170, 252);
+  --main_color: rgb(90, 65, 32);
+  --second_color:rgb(188, 252, 70);
 }
 
 *{
@@ -27,6 +29,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
 }
 
 code {
