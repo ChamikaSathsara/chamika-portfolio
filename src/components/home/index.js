@@ -4,6 +4,7 @@ import TypeWriter from 'react-typewriter';
 import About from '../about';
 import MyProjects from '../myProjects';
 import WorkExperience from '../workExperience';
+import ContactForm from '../contactME';
 
 const Home = () => {
 
@@ -47,6 +48,7 @@ const Home = () => {
             <About />
             <WorkExperience/>
             <MyProjects />
+            <ContactForm/>
         </div>
     );
 };
