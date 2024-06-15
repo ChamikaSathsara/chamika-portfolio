@@ -3,6 +3,7 @@ import styles from './home.module.scss';
 import TypeWriter from 'react-typewriter';
 import About from '../about';
 import MyProjects from '../myProjects';
+import WorkExperience from '../workExperience';
 
 const Home = () => {
 
@@ -44,6 +45,7 @@ const Home = () => {
                 </div>
             </div>
             <About />
+            <WorkExperience/>
             <MyProjects />
         </div>
     );

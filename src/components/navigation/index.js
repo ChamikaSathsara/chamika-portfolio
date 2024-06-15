@@ -64,6 +64,7 @@ const Nav = () => {
             <div className={styles.navLinks}>
                 <Link to="#home" onClick={toggleMenu} smooth>Home</Link>
                 <Link to="#about" onClick={toggleMenu} smooth>About</Link>
+                <Link to="#work" onClick={toggleMenu} smooth>Experience</Link>
                 <Link to="#projects" onClick={toggleMenu} smooth>Projects</Link>
                 <Link to="#contact" onClick={toggleMenu} smooth>Contact Me</Link>
                 <div className={styles.toggle}>
@@ -111,6 +112,7 @@ const Nav = () => {
             </div>
             <div className={styles.navLinksDesktop}>
                 <Link to="#about" smooth >About</Link>
+                <Link to="#work" smooth>Experience</Link>
                 <Link to="#projects" smooth>Projects</Link>
                 <Link to="#contact" smooth>Contact Me</Link>
             </div>
