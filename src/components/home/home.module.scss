@@ -12,7 +12,7 @@
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 87vh; /* Full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,7 +124,7 @@
 @media only screen and (max-width: 600px) {
     .homeTime{
         margin-top: 0rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0;
     }
     /* Hide scrollbar for WebKit-based browsers (Chrome, Safari) */
 * {
@@ -139,10 +139,10 @@
         display: none;
     }
     .backgroundImage{
-        height: 105vh;
+        height: 50vh;
     }
     .background{
-        height: 105vh;
+        height: 100%;
     }
     .homeText {
         margin: 1rem;
@@ -182,6 +182,20 @@
 }
 
 @media only screen and (max-width: 412px) {
+    .backgroundImage {
+    background-image:  url('../../../public/images/background-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 85vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: -1;
+    overflow: hidden; /* To ensure the pseudo-element doesn't overflow */
+}
     .background{
         flex-direction: column;
         padding-left: 5%;

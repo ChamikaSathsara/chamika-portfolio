@@ -2,45 +2,32 @@ import React from 'react';
 import styles from './workExperience.module.scss';
 
 const workExperienceData = [
-  {
-    "position": "Front-End Web Developer - SCI",
-    "responsibilities": [
-      "Maintain assets on network of brand sites utilizing XML, JQuery, XSLT & JavaScript.",
-      "Prioritize and address web requests to ensure requests are effectively resolved in a timely manner.",
-      "Collaborate with department staff to ensure user-focused design and launch of interactive web initiatives.",
-      "Develop, enhance, maintain and support web applications in Interwoven TeamSite CMS to evaluate the effectiveness, usability, and accessibility of Web sites and make recommendations for enhancements to Web sites overall effectiveness."
-    ],
-    "date": "OCTOBER 2014 - PRESENT"
-  },
-  {
-    "position": "Freelance Web Developer - Bekov Creative Studio",
-    "responsibilities": [
-      "Clients (Results Marketing, Red News, Weight Loss Houston)"
-    ],
-    "date": "MARCH 2012 - SEPTEMBER 2014"
-  },
-  {
-    "position": "Web Developer - Vestas",
-    "responsibilities": [
-      "Designed, developed and successfully implemented eLearning web sites for new employees within the global team of Vestas Intranet, a research company with 20,000 employees.",
-      "Worked with SharePoint Platform to create Team site user-friendly applications creating an infrastructure for ease in corporate project communications across departments.",
-      "Maintained and continually enhanced intranet web sites without management supervision. Refreshed the looks and recreated some of the training web sites, since old technology was used and outdated data was implemented.",
-      "Wrote and published weekly newsletters action updates."
-    ],
-    "date": "JANUARY 2010 - FEBRUARY 2012"
-  },
-  {
-    "position": "Front-End Web Developer - UI/UX Designer - IADC",
-    "responsibilities": [
-      "Responsible for development and support of corporate web sites (IADC, DEA, Careers @ IADC, Drilling Contractor) all running on Joomla CMS.",
-      "Creating quarterly circulation reports based on data mining and analysis",
-      "Responsible for subscription for Drilling Contractor",
-      "Creating newsletters for Drilling Contractor internationally.",
-      "Creating Drill Bits newsletters for mobile viewers.",
-      "Integration of Subscription form into a web site via MYSQL + PHP within Joomla."
-    ],
-    "date": "JUNE 2006 - DECEMBER 2009"
-  }
+    {
+      "position": "Full-Stack Software Engineer - ElectroBeam",
+      "date": "January 2024 - Present",
+      "responsibilities": [
+        "Followed the MERN stack to deliver innovative solutions.",
+        "Enhanced user experience through thoughtful design.",
+        "Utilized AWS and Docker for scalable application deployment."
+      ]
+    },
+    {
+      "position": "Freelance UI/UX & Graphic Designer - Self-employed",
+      "date": "December 2020 - January 2024",
+      "responsibilities": [
+        "Designed and implemented eLearning platforms for Vestas Intranet.",
+        "Developed user-friendly applications on SharePoint for enhanced project collaboration.",
+        "Created impactful visual designs to strengthen brand identity."
+      ]
+    },
+    {
+      "position": "Training Business Development Officer - FriMi",
+      "date": "May 2020 - December 2020",
+      "responsibilities": [
+        "Promoted FriMi application and onboarded new customers.",
+        "Implemented KYC and AML processes to ensure regulatory compliance."
+      ]
+    }
 ];
 
 const WorkExperience = () => {

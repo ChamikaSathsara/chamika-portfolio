@@ -5,6 +5,7 @@ import About from '../about';
 import MyProjects from '../myProjects';
 import WorkExperience from '../workExperience';
 import ContactForm from '../contactME';
+import LogoSlider from '../slider';
 
 const Home = () => {
 
@@ -45,6 +46,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <LogoSlider/>
             <About />
             <WorkExperience/>
             <MyProjects />
