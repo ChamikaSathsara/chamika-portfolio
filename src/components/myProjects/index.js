@@ -65,7 +65,7 @@ const MyProjects = () => {
     };
 
     return (
-        <div>
+        <div id="projects">
         <h1 className={styles.myProjectsTitle}>My Projects</h1>
         <div className={styles.myProjects}>
             {projects.map((project) => (

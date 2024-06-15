@@ -1,13 +1,14 @@
-/* about.module.scss */
 .wrap {
+    margin-top: 5rem;
     display: flex;
-    align-items: flex-end;
+    flex-direction: row;
     padding: 20px;
     background-color: var(--primary-color); /* Adjust as needed */
     border-radius: 10px;
     position: relative;
     justify-content: center;
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items vertically */
+    padding-top: 6rem;
 }
 
 .profilepic {
@@ -17,58 +18,24 @@
     background-image: url('../../../public/images/propic.jpeg'); /* Adjust the path to your profile picture */
     background-size: cover;
     background-position: center;
-    position: relative;
-    z-index: 1;
     transition: transform 0.3s ease-in-out;
+    margin-right: 20px; /* Add margin between profile pic and text */
 
     &:hover {
         transform: scale(1.1);
     }
 }
 
-.profilepic::before,
-.profilepic::after,
-.profilepic::nth-child(2n)::before {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    z-index: 0;
-    opacity: 0.6;
-    transition: all 0.3s ease-in-out;
-}
-
-.profilepic::before {
-    width: 180px;
-    height: 180px;
-    background-color: rgba(255, 0, 0, 0.5); /* Red */
-    top: -15px;
-    left: -15px;
-}
-
-.profilepic::after {
-    width: 200px;
-    height: 200px;
-    background-color: rgba(0, 0, 255, 0.5); /* Blue */
-    top: -25px;
-    left: -25px;
-}
-
-.profilepic:nth-child(2n)::before {
-    width: 220px;
-    height: 220px;
-    background-color: rgba(0, 255, 0, 0.5); /* Green */
-    top: -35px;
-    left: -35px;
-}
-
 .aboutText {
-    margin-left: 20px;
+    margin-left: 2rem;
     color: var(--text-color); /* Adjust as needed */
+    width: 50%; /* Adjust width as needed */
 }
 
 .aboutTitle {
     font-size: 2em;
     margin-bottom: 10px;
+    margin-top: 0;
 }
 
 .aboutContent {
@@ -76,51 +43,46 @@
     line-height: 1.5;
 }
 
-.aboutText {
-    margin-left: 5rem;
-    margin-top: 5rem;
-    width: 50%;
-}
-
-.aboutTitle {
-    display: flex;
-    align-items: center;
-    margin-top: 6rem;
-    color: var(--body_color);
-}
-
 /* Mobile view adjustments */
 @media only screen and (max-width: 768px) {
     .wrap {
-        flex-direction: column;
+        flex-direction: column; /* Stack items vertically */
         align-items: center;
     }
 
-    .aboutText {
+    .profilepic {
+        margin-right: 0; /* Remove margin when stacked vertically */
+        margin-bottom: 20px; /* Add space between picture and text */
+    }
 
-        flex-direction: column;
+    .aboutText {
         margin-left: 0;
-        margin-top: 3rem;
-        width: 80%;
-        text-align: center;
+        width: 80%; /* Adjust width for smaller screens */
+        text-align: center; /* Center align text */
     }
 
     .aboutTitle {
         margin-top: 2rem;
     }
 
-    .aboutContent{
+    .aboutContent {
         font-size: small;
-        text-align: justify;
+        text-align: center;
     }
 }
 
 @media only screen and (max-width: 412px) {
     .aboutText {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 0;
-        margin-top: 0;
+        width: 90%; /* Further adjust width for smaller screens */
+        text-align: center; /* Center align text */
+    }
+
+    .aboutTitle {
+        margin-top: 1rem;
+    }
+
+    .aboutContent {
+        font-size: smaller;
+        text-align: center;
     }
 }

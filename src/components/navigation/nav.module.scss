@@ -15,7 +15,9 @@
 
 .navBar__logo {
     font-weight: 500;
-    margin-left: 2rem;
+    margin-left: 4rem;
+    text-decoration: none !important;
+    color: var(--text_color);
 }
 
 .navLinks {
@@ -53,7 +55,7 @@
     margin-right: 2rem;
 }
 .toggle_second {
-    margin-right: 2rem;
+    margin-right: 5rem;
 }
 
 .hamburger {
@@ -87,6 +89,9 @@
 
 /* Mobile view */
 @media only screen and (max-width: 768px) {
+    .navBar__logo_warp{
+        display: none !important;;
+    }
     .toggle_second {
         display: none;
     }

@@ -1,12 +1,10 @@
-import React, { useState, useEffect} from 'react';
-import Nav from '../navigation';
+import React, { useState, useEffect } from 'react';
 import styles from './home.module.scss';
 import TypeWriter from 'react-typewriter';
 import About from '../about';
 import MyProjects from '../myProjects';
 
 const Home = () => {
-
 
     const [date, setDate] = useState(new Date());
 
@@ -29,22 +27,21 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
-            <Nav />
+        <div id="home" className={styles.homeWrap}>
             <div className={styles.backgroundImage}>
-            <div className={styles.background}>
-            <div className={styles.homeTime}>
-                <p className={styles.time}>{date.toLocaleTimeString()}</p>
-                <p className={styles.date}>{formatDate(date)}</p>
-            </div>
-            <div className={styles.homeText}>
-                <TypeWriter typing={1}>
-                    <p className={styles.text1}>hello!</p>
-                    <p className={styles.text2}>I'm <span className={styles.text3}>Chamika Sathsara</span></p>
-                    <p className={styles.text1}><span className={styles.text4}>UI UX Engineer</span> & Full-Stack Developer Intern</p>
-                </TypeWriter>
-            </div>
-            </div>
+                <div className={styles.background}>
+                    <div className={styles.homeTime}>
+                        <p className={styles.time}>{date.toLocaleTimeString()}</p>
+                        <p className={styles.date}>{formatDate(date)}</p>
+                    </div>
+                    <div className={styles.homeText}>
+                        <TypeWriter typing={1}>
+                            <p className={styles.text1}>hello!</p>
+                            <p className={styles.text2}>I'm <span className={styles.text3}>Chamika Sathsara</span></p>
+                            <p className={styles.text1}><span className={styles.text4}>UI UX Engineer</span> & Full-Stack Developer Intern</p>
+                        </TypeWriter>
+                    </div>
+                </div>
             </div>
             <About />
             <MyProjects />

@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import ReactSwitch from 'react-switch';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import styles from './nav.module.scss';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Nav = () => {
-    // Function to determine if it's AM or PM
     const isNightTime = () => {
         const hours = new Date().getHours();
-        return hours >= 18 || hours < 6; // Consider night time from 6 PM to 6 AM
+        return hours >= 18 || hours < 6;
     };
 
-    // Retrieve the initial theme based on time or localStorage
     const initialTheme = localStorage.getItem('selectedTheme') || (isNightTime() ? 'dark' : 'light');
     const [checked, setChecked] = useState(initialTheme === 'dark');
 
@@ -24,7 +23,6 @@ const Nav = () => {
         localStorage.setItem('selectedTheme', 'light');
     };
 
-    // useEffect to set the theme on initial render
     useEffect(() => {
         if (checked) {
             setDarkMode();
@@ -37,7 +35,6 @@ const Nav = () => {
         setChecked(checked);
     };
 
-    // State for mobile menu toggle
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -50,71 +47,72 @@ const Nav = () => {
             navLinks.style.display = 'flex';
             setTimeout(() => {
                 navLinks.classList.add(styles.showMenu);
-            }, 10); // Slight delay to trigger animation
+            }, 10);
         } else {
             navLinks.classList.remove(styles.showMenu);
             setTimeout(() => {
                 navLinks.style.display = 'none';
-            }, 300); // Delay to match the animation duration
+            }, 300);
         }
     }, [menuOpen]);
 
     return (
         <div className={styles.navBar}>
-            <div className={styles.navBar__logo}>
-                C H A M I K A
+            <div className={styles.navBar__logo_warp} >
+            <Link className={styles.navBar__logo} to="#home" smooth>C H A M I K A</Link>
             </div>
             <div className={styles.navLinks}>
-                <a href="#about" onClick={toggleMenu}>About</a>
-                <a href="#projects" onClick={toggleMenu}>Projects</a>
-                <a href="#contact" onClick={toggleMenu}>Contact Me</a>
+                <Link to="#home" onClick={toggleMenu} smooth>Home</Link>
+                <Link to="#about" onClick={toggleMenu} smooth>About</Link>
+                <Link to="#projects" onClick={toggleMenu} smooth>Projects</Link>
+                <Link to="#contact" onClick={toggleMenu} smooth>Contact Me</Link>
                 <div className={styles.toggle}>
-                <ReactSwitch
-                    checked={checked}
-                    onChange={handleChange}
-                    handleDiameter={20}
-                    offColor="#030202"
-                    onColor="#ffffff"
-                    offHandleColor="#ffffff"
-                    onHandleColor="#030202"
-                    height={35}
-                    width={70}
-                    uncheckedIcon={
-                        <div style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            height: "100%",
-                            fontSize: 10,
-                            color: "#ffffff",
-                            paddingRight: 2
-                        }}>
-                            Light
-                        </div>
-                    }
-                    checkedIcon={
-                        <div style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            height: "100%",
-                            fontSize: 10,
-                            color: "#030202",
-                            paddingRight: 2
-                        }}>
-                            Night
-                        </div>
-                    }
-                />
-            </div>
+                    <ReactSwitch
+                        checked={checked}
+                        onChange={handleChange}
+                        handleDiameter={20}
+                        offColor="#030202"
+                        onColor="#ffffff"
+                        offHandleColor="#ffffff"
+                        onHandleColor="#030202"
+                        height={35}
+                        width={70}
+                        uncheckedIcon={
+                            <div style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                height: "100%",
+                                fontSize: 10,
+                                color: "#ffffff",
+                                paddingRight: 2
+                            }}>
+                                Light
+                            </div>
+                        }
+                        checkedIcon={
+                            <div style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                height: "100%",
+                                fontSize: 10,
+                                color: "#030202",
+                                paddingRight: 2
+                            }}>
+                                Night
+                            </div>
+                        }
+                    />
+                </div>
                 <div className={styles.closeIcon} onClick={toggleMenu}>
-                    <FaTimes size={30} />
+                    <FaTimes size={20} />
                 </div>
             </div>
-            <div className={styles.navLinksDesktop} >
-                <a href="#about" onClick={toggleMenu}>About</a>
-                <a href="#projects" onClick={toggleMenu}>Projects</a>
-                <a href="#contact" onClick={toggleMenu}>Contact Me</a>
+            <div className={styles.navLinksDesktop}>
+                <Link to="#about" smooth >About</Link>
+                <Link to="#projects" smooth>Projects</Link>
+                <Link to="#contact" smooth>Contact Me</Link>
             </div>
             <div className={styles.toggle_second}>
                 <ReactSwitch
@@ -155,10 +153,8 @@ const Nav = () => {
                     }
                 />
             </div>
-
-            
             <div className={styles.hamburger} onClick={toggleMenu}>
-                <FaBars size={30} />
+                <FaBars size={20} />
             </div>
         </div>
     );
